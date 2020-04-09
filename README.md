@@ -1,3 +1,6 @@
+This project uses React, React Router, and Flux to build a data-driven application that manages Pluralsight course data, based on their course [**Building Applications with React and Flux**](https://app.pluralsight.com/library/courses/react-flux-building-applications/table-of-contents). The course uses a modern client-side development stack including create-react-app, Node, Webpack, Babel, and Bootstrap.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
