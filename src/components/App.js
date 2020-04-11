@@ -3,7 +3,8 @@ import HomePage from './HomePage';
 import AboutPage from './AboutPage';
 import CoursesPage from './CorsesPage';
 import Header from './common/Header';
-import { Route } from 'react-router-dom';
+import NotFoundPage from "./NotFoundPage";
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
     // Use React Router instead
@@ -17,9 +18,13 @@ function App() {
     return (
         <div className='container-fluid'>
             <Header />
-            <Route path='/' exact component={HomePage} />
-            <Route path='/courses' component={CoursesPage} />
-            <Route path='/about' component={AboutPage} />
+            {/* Only one of the routes inside Switch will match */}
+            <Switch>
+                <Route path='/' exact component={HomePage} />
+                <Route path='/courses' component={CoursesPage} />
+                <Route path='/about' component={AboutPage} />
+                <Route component={NotFoundPage} />
+            </Switch>
         </div>
     );
 
