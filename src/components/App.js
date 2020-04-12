@@ -26,6 +26,7 @@ function App() {
                 <Route path='/about' component={AboutPage} />
                 {/* :slug is a URL parameter that can be declared after a colon */}
                 <Route path='/course/:slug' component={ManageCoursePage} />
+                <Route path='/course' component={ManageCoursePage} />
                 <Redirect from='/about-page' to='about' />
                 <Route component={NotFoundPage} />
             </Switch>
