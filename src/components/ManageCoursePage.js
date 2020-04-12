@@ -12,16 +12,17 @@ const ManageCoursePage = props => {
     });
 
     // onChange Handler
-    function handleTitleChange(event) {
+    function handleChange(event) {
         // Creat a copy of the course object
-        // & assign the input title to that copy
-        const updatedCourse = { ...course, title: event.target.value };
+        // & assign the input values to that copy
+        // according to the event name
+        const updatedCourse = { ...course, [event.target.name]: event.target.value };
         setCourse(updatedCourse);
     }
     return (
         <>
             <h2>Manage Course</h2>
-            <CourseForm course={course} onTitleChange={handleTitleChange} />
+            <CourseForm course={course} onChange={handleChange} />
         </>
     );
 }
