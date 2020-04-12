@@ -9,9 +9,10 @@ function CourseForm(props) {
                     <input
                         id="title"
                         type="text"
+                        onChange={props.onTitleChange}
                         name="title"
                         className="form-control"
-                        value=""
+                        value={props.course.title}
                     />
                 </div>
             </div>
@@ -22,7 +23,8 @@ function CourseForm(props) {
                         id="author"
                         name="authorId"
                         onChange={props.onChange}
-                        value=""
+                        // If the authorId is Null ==> set the value to an empty string
+                        value={props.course.authorId || ''}
                         className="form-control"
                     >
                         <option value="" />
@@ -40,7 +42,7 @@ function CourseForm(props) {
                         id="category"
                         name="category"
                         className="form-control"
-                        value=""
+                        value={props.course.category}
                     />
                 </div>
             </div>
