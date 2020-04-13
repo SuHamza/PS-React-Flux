@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import CourseForm from './CourseForm';
 import * as courseApi from '../api/courseApi';
+import { toast } from 'react-toastify';
 
 const ManageCoursePage = props => {
     // Declare an empty course state
@@ -24,7 +25,12 @@ const ManageCoursePage = props => {
     function handleSubmit(event) {
         // Prevent the page from posting back to the server
         event.preventDefault();
-        courseApi.saveCourse(course);
+        courseApi.saveCourse(course).then(() => {
+            // If saved successfully
+            // Redirect to Course's page
+            props.history.push('/courses');
+            toast.success('Course saved successfully!');
+        });
     }
     return (
         <>
